@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NaratorController : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class NaratorController : MonoBehaviour
     [SerializeField]
     private TMP_Text dialogueCounterText;
     private int dialogueCounter = 0;
+    public Image backgroundImage;
 
     [SerializeField]
     private float interval = 8f;
@@ -42,6 +44,7 @@ public class NaratorController : MonoBehaviour
     private IEnumerator Wait(float waitTime)
     {
         animator.SetTrigger("TurnOn");
+        backgroundImage.gameObject.SetActive(true);
 
         for (int i = 0; i < dialogue.Length; i++)
         {
@@ -65,6 +68,7 @@ public class NaratorController : MonoBehaviour
         dialogueBox.text = "";
         dialogueCounterText.text = "";
         dialogueCounter = 0;
+        backgroundImage.gameObject.SetActive(false);
         animator.SetBool("Talking", false);
         animator.SetTrigger("TurnOff");
     }
