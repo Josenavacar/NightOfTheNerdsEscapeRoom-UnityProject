@@ -32,6 +32,7 @@ public class NaratorController : MonoBehaviour
     public void StartCoroutine()
     {
         coroutine = Wait(interval);
+        backgroundImage.gameObject.SetActive(true);
         StartCoroutine(coroutine);
     }
 
@@ -44,7 +45,6 @@ public class NaratorController : MonoBehaviour
     private IEnumerator Wait(float waitTime)
     {
         animator.SetTrigger("TurnOn");
-        backgroundImage.gameObject.SetActive(true);
 
         for (int i = 0; i < dialogue.Length; i++)
         {
@@ -55,9 +55,8 @@ public class NaratorController : MonoBehaviour
 
             yield return new WaitForSeconds(waitTime);
 
-            if (i >= dialogue.Length - 1)
-            {
-                i = 0;
+            if (i >= dialogue.Length - 1) {
+                i = -1;
                 dialogueCounter = 0;
             }
         }
