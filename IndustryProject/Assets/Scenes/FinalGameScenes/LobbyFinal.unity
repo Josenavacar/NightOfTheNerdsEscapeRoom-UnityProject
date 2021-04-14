@@ -1751,7 +1751,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32320
+  m_Name: pb_Mesh-39000
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6116,7 +6116,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32302
+  m_Name: pb_Mesh-38982
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8122,7 +8122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31126
+  m_Name: pb_Mesh-103462
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10046,7 +10046,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33482
+  m_Name: pb_Mesh-56118
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11680,7 +11680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484989345}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 71.9, y: 2.78, z: -19.140001}
+  m_LocalPosition: {x: 69.02, y: 2.78, z: -19.140001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14601,7 +14601,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33484
+  m_Name: pb_Mesh-56120
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18307,11 +18307,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Use Q to open and close your phone.
+      value: Use Q to pull out your phone.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
+      propertyPath: dialogue.Array.data[1]
+      value: You can jump with spacebar.
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[2]
@@ -19213,7 +19217,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32322
+  m_Name: pb_Mesh-39002
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20344,7 +20348,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31128
+  m_Name: pb_Mesh-103464
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22829,7 +22833,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33480
+  m_Name: pb_Mesh-56116
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -25059,7 +25063,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32326
+  m_Name: pb_Mesh-39006
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -37791,15 +37795,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[0]
-      value: Stand in the red square to enter the Klokgebouw.
+      value: Something seems amiss inside. I'm glad you're here to help!
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[1]
-      value: Wait until all your teammates are ready aswell.
+      value: Move into the red square to enter the building.
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[2]
-      value: Good luck!
+      value: Wait until everyone is ready. Good luck!
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685945462824, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: m_Mesh
@@ -38370,7 +38374,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32324
+  m_Name: pb_Mesh-39004
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -39897,7 +39901,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31108
+  m_Name: pb_Mesh-103444
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -41202,7 +41206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33478
+  m_Name: pb_Mesh-56114
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -46567,7 +46571,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31132
+  m_Name: pb_Mesh-103468
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -47696,7 +47700,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-33460
+  m_Name: pb_Mesh-56096
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -52170,7 +52174,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-31130
+  m_Name: pb_Mesh-103466
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -58378,7 +58382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685858756243, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: dialogue.Array.data[2]
-      value: The Klokgebouw has been invaded! Get inside now!
+      value: Use your mouse to look around.
       objectReference: {fileID: 0}
     - target: {fileID: 8575252685945462824, guid: 237a662462217194788a96858aabd118, type: 3}
       propertyPath: m_Mesh
