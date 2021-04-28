@@ -12,9 +12,12 @@ public class RoomManagerClient : MonoBehaviourPunCallbacks
         PhotonNetwork.AutomaticallySyncScene = true;
     }
 
+    public TextMeshProUGUI errorText;
+
     //join
     public void JoinRoom()
     {
+        errorText.gameObject.SetActive(false);
         string roomCode = RoomCodeText.instance.Text;
 
         SetUserName.instance.SetCurrentUserName();
@@ -22,6 +25,8 @@ public class RoomManagerClient : MonoBehaviourPunCallbacks
         PlayerPrefs.SetString("UserName", SetUserName.instance.currentSavedUsername);
 
         Debug.Log("Join room with id: " + RoomCodeText.instance.Text);
-        PhotonNetwork.JoinRoom(RoomCodeText.instance.Text);
+        if(PhotonNetwork.JoinRoom(RoomCodeText.instance.Text) == false) {
+            errorText.gameObject.SetActive(true);
+        }
     }
 }

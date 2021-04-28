@@ -48,7 +48,12 @@ public class NaratorController : MonoBehaviour
 
         for (int i = 0; i < dialogue.Length; i++)
         {
-            animator.SetBool("Talking", true);
+            if(Random.Range(0, 2) >= 1) {
+                animator.SetBool("Talking", true);
+            }
+            else {
+                animator.SetBool("Talking", false);
+            }
             dialogueBox.text = dialogue[i];
             dialogueCounter++;
             dialogueCounterText.text = dialogueCounter + "/" + dialogue.Length;

@@ -1658,6 +1658,11 @@ namespace Photon.Pun
                 return false;
             }
 
+            if(roomName == "" || roomName == null) {
+                Debug.LogError("CreateRoom failed. Specify a room number.");
+                return false;
+            }
+
             typedLobby = typedLobby ?? ((NetworkingClient.InLobby) ? NetworkingClient.CurrentLobby : null);  // use given lobby, or active lobby (if any active) or none
 
             EnterRoomParams opParams = new EnterRoomParams();

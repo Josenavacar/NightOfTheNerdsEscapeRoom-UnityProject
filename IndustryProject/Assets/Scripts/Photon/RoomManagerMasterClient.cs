@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -9,6 +10,7 @@ public class RoomManagerMasterClient : MonoBehaviourPunCallbacks
 {
     [SerializeField] private int lobbySceneNumber;
 
+    public TextMeshProUGUI errorText;
     private int roomID = 0;
 
     public void CreateRoom()
@@ -16,14 +18,15 @@ public class RoomManagerMasterClient : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsConnected)
         {
             //Set room id
-            SetRandomRoomID();
             Debug.Log("try to create a room with number: " + RoomCodeText.instance.Text);
 
             RoomOptions ro = new RoomOptions();
 
             ro.MaxPlayers = 4;
 
-            PhotonNetwork.CreateRoom(RoomCodeText.instance.Text, ro);
+            if(PhotonNetwork.CreateRoom(RoomCodeText.instance.Text, ro) == false) {
+                errorText.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -47,11 +50,6 @@ public class RoomManagerMasterClient : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         // CreateRoom();
-    }
-
-    private void SetRandomRoomID()
-    {
-        roomID = Random.Range(1000, 9999);
     }
 
     public int RoomID { get => roomID; private set => roomID = value; }
