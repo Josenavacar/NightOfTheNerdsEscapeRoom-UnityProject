@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalGameScenes/LobbyFinal.unity
     guid: 7e39f2e3faa857047962db98f5300c62
   - enabled: 1
-    path: Assets/Scenes/FinalGameScenes/SignalPuzzle.unity
-    guid: d2ff64525eff5044ca09f5ad50e90dda
-  - enabled: 1
     path: Assets/Scenes/FinalGameScenes/Floor1.unity
     guid: d7bef3655cdb3e94e96e66852293db2f
   - enabled: 1
@@ -23,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalGameScenes/EndScreen.unity
     guid: 8b2576801b443394da8320b8242f70e3
+  - enabled: 1
+    path: Assets/Scenes/FinalGameScenes/BinaryPuzzle.unity
+    guid: dff774436f70e9e45bb5466b97b7d6cf
+  - enabled: 1
+    path: Assets/Scenes/Puzzles/BinaryPuzzle.unity
+    guid: aa52115d7f6cd4148b328ea4ef0dd273
   m_configObjects: {}
