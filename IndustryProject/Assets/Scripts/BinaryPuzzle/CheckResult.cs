@@ -29,7 +29,8 @@ public class CheckResult : MonoBehaviour
     {
         if(!won && isVictoryEnabled)
         {
-            tickOnTimer();
+            //disabled timer
+            //tickOnTimer();
 
             //check victory
             int counter = 0;
@@ -38,7 +39,6 @@ public class CheckResult : MonoBehaviour
 
             foreach(GameObject item in items)
             {
-                Debug.Log(currentResult.Length);
                 char[] numToCheck = item.GetComponent<TMP_InputField>().text.ToCharArray();
                
                 if(numToCheck[0] == currentResult[i])
@@ -52,7 +52,6 @@ public class CheckResult : MonoBehaviour
 
             if(counter == lines.Count)
             {
-                Debug.Log("You won!");
                 won = true;
                 winGame();
             }
@@ -68,9 +67,8 @@ public class CheckResult : MonoBehaviour
 
     void tickOnTimer()
     {
-        Debug.Log(timer);
-        //timer, to be tested
-        /*
+        //timer, disabled
+        
         if(timer > 0)
         {
             timer -= Time.deltaTime;
@@ -79,7 +77,6 @@ public class CheckResult : MonoBehaviour
         {
             resetPuzzle();
         }
-        */
 
         int timerInt = (int) timer;
         timerText.GetComponent<TMP_Text>().text = timerInt.ToString();
