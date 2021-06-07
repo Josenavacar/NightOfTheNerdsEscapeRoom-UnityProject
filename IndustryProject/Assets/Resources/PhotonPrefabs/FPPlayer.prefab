@@ -763,6 +763,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 4650442050438349972}
+  FtpTrigger: {fileID: 0}
+  FTPPuzzle: {fileID: 0}
 --- !u!1 &4650442050156064094
 GameObject:
   m_ObjectHideFlags: 0

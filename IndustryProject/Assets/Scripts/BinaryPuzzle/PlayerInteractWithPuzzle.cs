@@ -8,8 +8,12 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     GameObject triggerbox;
     private GameObject binaryPuzzle;
     private Scene currentScene;
-
     public GameObject playerCam;
+
+    #region FTP puzzle stuff
+    [SerializeField] GameObject FtpTrigger;
+    [SerializeField] GameObject FTPPuzzle;
+    #endregion
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,12 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
             binaryPuzzle = GameObject.FindGameObjectWithTag("BinaryPuzzle");
             binaryPuzzle.SetActive(false);
             triggerbox = GameObject.Find("BinaryPuzzleTrigger");
+        }
+        if (currentScene.buildIndex == 5)
+        {
+            FtpTrigger = GameObject.Find("FTPtrigger");
+            FTPPuzzle = GameObject.FindGameObjectWithTag("FTPPuzzle");
+            FTPPuzzle.SetActive(false);
         }
         
     }
@@ -45,6 +55,25 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                 playerCam.GetComponent<LookMouse>().enabled = true;
             }
         }
-        
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (Vector3.Distance(FtpTrigger.transform.position, this.gameObject.transform.position) < 5)
+            {
+                FTPPuzzle.SetActive(true);
+                gameObject.GetComponent<MovementPlayer>().enabled = false;
+                playerCam.GetComponent<LookMouse>().enabled = false;
+            }
+            //if (!FTPPuzzle.activeSelf)
+            //{
+            //    gameObject.GetComponent<MovementPlayer>().enabled = true;
+            //    playerCam.GetComponent<LookMouse>().enabled = true;
+            //}
+        }
+    }
+
+    public void RestartAfterPuzzle()
+    {
+        gameObject.GetComponent<MovementPlayer>().enabled = true;
+        playerCam.GetComponent<LookMouse>().enabled = true;
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Selectable
   - Codelock
   - BinaryPuzzle
+  - FTPPuzzle
   layers:
   - Default
   - TransparentFX
