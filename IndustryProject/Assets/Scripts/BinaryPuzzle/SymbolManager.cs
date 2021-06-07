@@ -20,18 +20,7 @@ public class SymbolManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < symbolsChosen.Length; i++)
-        {
-            symbolsChosen[i] = Random.Range(0, symbols.Count);
-        }
-
-        symbol1.sprite = symbols[symbolsChosen[0]].symbol;
-        symbol2.sprite = symbols[symbolsChosen[1]].symbol;
-        symbol3.sprite = symbols[symbolsChosen[2]].symbol;
-
-        result = symbols[symbolsChosen[0]].number;
-        result += symbols[symbolsChosen[1]].number;
-        result += symbols[symbolsChosen[2]].number;
+        ResetSymbols();
     }
 
     // Update is called once per frame
@@ -42,10 +31,15 @@ public class SymbolManager : MonoBehaviour
 
     public void ResetSymbols()
     {
-        for(int i = 0; i < symbolsChosen.Length; i++)
+        //Assures symbols will be different.
+        while((symbolsChosen[0] == symbolsChosen[1]) || (symbolsChosen[0] == symbolsChosen[2]) || (symbolsChosen[1] == symbolsChosen[2]))
         {
-            symbolsChosen[i] = Random.Range(0, symbols.Count);
+            symbolsChosen[0] = Random.Range(0, symbols.Count);
+            symbolsChosen[1] = Random.Range(0, symbols.Count);
+            symbolsChosen[2] = Random.Range(0, symbols.Count);
         }
+
+        Debug.Log(symbolsChosen[0] + ", " + symbolsChosen[1] + ", " + symbolsChosen[2]);
 
         symbol1.sprite = symbols[symbolsChosen[0]].symbol;
         symbol2.sprite = symbols[symbolsChosen[1]].symbol;

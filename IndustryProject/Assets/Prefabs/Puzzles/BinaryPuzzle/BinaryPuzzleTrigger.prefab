@@ -101,12 +101,21 @@ MonoBehaviour:
   m_text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, \nsed do eiusmod
     tempor incididunt ut labore et dolore\n magna aliqua. Ullamcorper a lacus vestibulum
     sed. Nunc consequat interdum varius sit amet. Morbi quis commodo odio aenean
-    sed adipiscing diam donec. A\nmet purus gravida quis blandit turpis cursus. Risus
-    nullam eget felis eget. Proin sed libero enim sed faucibus turpis in eu mi. Placerat
-    orci nulla pellentesque dignis\nsim enim sit amet venenatis urna. Aliquet bibendum
-    enim facilisis gravida neque convallis a. Venenatis a condimentum vitae sapien
-    pellentesque habitant mor\nbi tristique. Sed cras ornare arcu dui vivamus arcu
-    felis bibendum. \nQuis vel eros donec ac odio tempor orci.\r\n\r\n"
+    sed adipiscing diam donec. \n\nA met purus gravida quis blandit turpis cursus.
+    Risus nullam eget felis eget. Proin sed libero enim sed faucibus turpis in eu
+    mi. Placerat orci nulla pellentesque dignis\nsim enim sit amet venenatis urna.
+    \n\nAliquet bibendum enim facilisis gravida neque convallis a. Venenatis a condimentum
+    vitae sapien pellentesque habitant mor\nbi tristique. Sed cras ornare arcu dui
+    vivamus arcu felis bibendum. \nQuis vel eros donec ac odio tempor orci.\r\n\r\nVarius
+    vel pharetra vel turpis nunc. Enim nunc faucibus a pellentesque sit. Aliquet
+    risus feugiat in ante metus. Sagittis eu volutpat odio facilisis mauris. Ipsum
+    dolor sit amet consectetur adipiscing elit ut. Convallis tellus id interdum velit
+    laoreet id donec ultrices tincidunt. Mollis aliquam ut porttitor leo a. Luctus
+    venenatis lectus magna fringilla urna porttitor rhoncus dolor. \n\nSit amet porttitor
+    eget dolor morbi. Ullamcorper morbi tincidunt ornare massa eget egestas purus
+    viverra accumsan. Lectus quam id leo in vitae turpis massa sed elementum. Viverra
+    vitae congue eu consequat ac felis donec et odio. Cum sociis natoque penatibus
+    et magnis. Id leo in vitae turpis. Pharetra sit amet aliquam id.\r\n\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -115,8 +124,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278254951
+  m_fontColor: {r: 0.4029357, g: 0.990566, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -204,8 +213,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3655935661525515805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.249, y: 7.5276, z: -2.097}
-  m_LocalScale: {x: 1.2755, y: 0.7510255, z: 0.0096338}
+  m_LocalPosition: {x: 22.2808, y: 7.5429, z: -2.097}
+  m_LocalScale: {x: 1.3391178, y: 0.7204812, z: 0.0096338}
   m_Children:
   - {fileID: 3655935661010668014}
   m_Father: {fileID: 0}
