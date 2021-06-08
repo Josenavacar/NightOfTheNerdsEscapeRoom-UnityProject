@@ -56,14 +56,18 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
             }
         }
         #region ftp puzzle interact
-        if (Input.GetKeyDown(KeyCode.F))
+        if (currentScene.name == "FTPPuzzle")
         {
-            if (Vector3.Distance(FtpTrigger.transform.position, this.gameObject.transform.position) < 5)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                FTPPuzzle.SetActive(true);
-                gameObject.GetComponent<MovementPlayer>().enabled = false;
-                playerCam.GetComponent<LookMouse>().enabled = false;
+                if (Vector3.Distance(FtpTrigger.transform.position, this.gameObject.transform.position) < 5)
+                {
+                    FTPPuzzle.SetActive(true);
+                    gameObject.GetComponent<MovementPlayer>().enabled = false;
+                    playerCam.GetComponent<LookMouse>().enabled = false;
+                }
             }
+        
             //if (!FTPPuzzle.activeSelf)
             //{
             //    gameObject.GetComponent<MovementPlayer>().enabled = true;
