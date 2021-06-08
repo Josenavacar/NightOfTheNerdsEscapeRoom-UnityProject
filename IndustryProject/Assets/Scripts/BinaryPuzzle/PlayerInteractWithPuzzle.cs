@@ -25,7 +25,7 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
             binaryPuzzle.SetActive(false);
             triggerbox = GameObject.Find("BinaryPuzzleTrigger");
         }
-        if (currentScene.buildIndex == 5)
+        if (currentScene.name == "FTPPuzzle")
         {
             FtpTrigger = GameObject.Find("FTPtrigger");
             FTPPuzzle = GameObject.FindGameObjectWithTag("FTPPuzzle");
@@ -55,20 +55,26 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                 playerCam.GetComponent<LookMouse>().enabled = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F))
+        #region ftp puzzle interact
+        if (currentScene.name == "FTPPuzzle")
         {
-            if (Vector3.Distance(FtpTrigger.transform.position, this.gameObject.transform.position) < 5)
+            if (Input.GetKeyDown(KeyCode.F))
             {
-                FTPPuzzle.SetActive(true);
-                gameObject.GetComponent<MovementPlayer>().enabled = false;
-                playerCam.GetComponent<LookMouse>().enabled = false;
+                if (Vector3.Distance(FtpTrigger.transform.position, this.gameObject.transform.position) < 5)
+                {
+                    FTPPuzzle.SetActive(true);
+                    gameObject.GetComponent<MovementPlayer>().enabled = false;
+                    playerCam.GetComponent<LookMouse>().enabled = false;
+                }
             }
+        
             //if (!FTPPuzzle.activeSelf)
             //{
             //    gameObject.GetComponent<MovementPlayer>().enabled = true;
             //    playerCam.GetComponent<LookMouse>().enabled = true;
             //}
         }
+        #endregion
     }
 
     public void RestartAfterPuzzle()
