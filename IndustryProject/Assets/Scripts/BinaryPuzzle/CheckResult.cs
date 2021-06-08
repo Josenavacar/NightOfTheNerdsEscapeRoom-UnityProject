@@ -44,8 +44,7 @@ public class CheckResult : MonoBehaviour
                 {
                     counter++;
                 }
-             
-
+                
                 i++;
             }
 

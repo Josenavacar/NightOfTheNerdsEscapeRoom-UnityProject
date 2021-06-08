@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine;
 
@@ -7,8 +8,8 @@ public class MovingNumbers : MonoBehaviour
 {
     public List<GameObject> items = new List<GameObject>();
     private List<string> numbers = new List<string>();
-    public GameObject buttonUp;
-    public GameObject buttonDown;
+    public Button buttonUp;
+    public Button buttonDown;
 
     public float speed = .7f;
     public bool lineEnabled = true;
@@ -17,10 +18,21 @@ public class MovingNumbers : MonoBehaviour
     private bool beingHandled = true;
     private bool win = false;
 
+    void OnEnable()
+    {
+        StartCoroutine(UpdateNumbers());
+    }
+    
+    void OnDisable()
+    {
+        StopCoroutine(UpdateNumbers());
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        beingHandled = true;
+
         foreach(GameObject item in items)
         {
             numbers.Add(item.GetComponent<TMP_InputField>().text);
@@ -35,7 +47,7 @@ public class MovingNumbers : MonoBehaviour
             if(beingHandled)
             {
                 beingHandled = false;
-                StartCoroutine(UpdateNubers());
+                StartCoroutine(UpdateNumbers());
 
                 foreach(GameObject item in items)
                 {
@@ -52,7 +64,7 @@ public class MovingNumbers : MonoBehaviour
         }
     }
 
-    IEnumerator UpdateNubers()
+    IEnumerator UpdateNumbers()
     {
         foreach(GameObject item in items)
         {
