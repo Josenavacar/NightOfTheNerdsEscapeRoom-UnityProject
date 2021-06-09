@@ -6471,7 +6471,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh68946
+  m_Name: pb_Mesh23520
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7637,6 +7637,7 @@ Transform:
   m_LocalPosition: {x: -9.005, y: 12.448, z: 18.578}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 476212527}
   - {fileID: 1640892483}
   - {fileID: 1482762203}
   - {fileID: 814202585}
@@ -7650,11 +7651,11 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1640892483}
+    m_TransformParent: {fileID: 471938593}
     m_Modifications:
     - target: {fileID: 8327439715024738052, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8327439715024738052, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_LocalScale.x
@@ -7706,7 +7707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327439715024738054, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_Name
-      value: FTP Door (1)
+      value: Binary Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
@@ -13626,7 +13627,7 @@ Transform:
   - {fileID: 1979218818}
   - {fileID: 992551699}
   m_Father: {fileID: 471938593}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &814953047
 GameObject:
@@ -22503,7 +22504,7 @@ Transform:
   - {fileID: 1695206634}
   - {fileID: 1344609845}
   m_Father: {fileID: 471938593}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1484672956
 GameObject:
@@ -24124,9 +24125,8 @@ Transform:
   m_Children:
   - {fileID: 755835932}
   - {fileID: 1404329678}
-  - {fileID: 476212527}
   m_Father: {fileID: 471938593}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1649802978
 PrefabInstance:
@@ -24546,7 +24546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327439715024738054, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_Name
-      value: FTP Door
+      value: FTP2 Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
@@ -25096,7 +25096,7 @@ Transform:
   - {fileID: 14181738}
   - {fileID: 572145102}
   m_Father: {fileID: 471938593}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &1735740395
 GameObject:
@@ -45500,7 +45500,7 @@ PrefabInstance:
       objectReference: {fileID: 8948193419937270212}
     - target: {fileID: 8948193420151715093, guid: f8d3eb3e1d5bb524ea98f0763e3a010b, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8948193420151715093, guid: f8d3eb3e1d5bb524ea98f0763e3a010b, type: 3}
       propertyPath: m_LocalPosition.x
