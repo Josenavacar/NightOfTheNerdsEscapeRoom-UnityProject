@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class anchorPuzzlePiece : MonoBehaviour
 {
-    private movePuzzlePiece key;
+    public movePuzzlePiece key;
     public movePuzzlePiece occupyingPiece;
     [SerializeField] RectTransform thisAnchor;
 
     private void Start()
     {
-        key = FindObjectOfType<movePuzzlePiece>();
+        //key = FindObjectOfType<movePuzzlePiece>();\
+        //key = transform.parent.parent.GetComponentInChildren<movePuzzlePiece>();
         thisAnchor = GetComponent<RectTransform>();
     }
 
@@ -33,32 +34,32 @@ public class anchorPuzzlePiece : MonoBehaviour
     }
 
     #region old code
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //if (occupyingPiece==null)
-        //{
-        //    Debug.Log("trigger enter" + this.GetInstanceID());
-        //    if (collision.TryGetComponent(out movePuzzlePiece piece))
-        //    {
-        //        piece.AnchorPiece(new Vector3(transform.position.x, transform.position.y, 0));
-        //        occupyingPiece = piece.GetComponent<movePuzzlePiece>();
-        //    }
-        //}
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    //if (occupyingPiece==null)
+    //    //{
+    //    //    Debug.Log("trigger enter" + this.GetInstanceID());
+    //    //    if (collision.TryGetComponent(out movePuzzlePiece piece))
+    //    //    {
+    //    //        piece.AnchorPiece(new Vector3(transform.position.x, transform.position.y, 0));
+    //    //        occupyingPiece = piece.GetComponent<movePuzzlePiece>();
+    //    //    }
+    //    //}
+    //}
     
-    private void OnTriggerExit2D(Collider2D collision)
-    {
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
         
-        //if (collision.TryGetComponent(out movePuzzlePiece piece))
-        //{
-        //    piece.unAnchor();
-        //}
-        //if (collision.GetComponent<movePuzzlePiece>() == occupyingPiece)
-        //{
-        //    occupyingPiece = null;
-        //    Debug.Log("trigger exit " + this.GetInstanceID());
-        //}
+    //    //if (collision.TryGetComponent(out movePuzzlePiece piece))
+    //    //{
+    //    //    piece.unAnchor();
+    //    //}
+    //    //if (collision.GetComponent<movePuzzlePiece>() == occupyingPiece)
+    //    //{
+    //    //    occupyingPiece = null;
+    //    //    Debug.Log("trigger exit " + this.GetInstanceID());
+    //    //}
         
-    }
+    //}
     #endregion
 }

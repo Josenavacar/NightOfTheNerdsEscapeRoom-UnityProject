@@ -38,16 +38,16 @@ public class movePuzzlePiece : MonoBehaviour, IDragHandler, IPointerDownHandler,
     #region old code that i don't want to delete for sentimental reasons lolxdsike
     private void OnMouseDown()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            //Vector3 mousePos;
-            //mousePos = Input.mousePosition;
-            //mousePos = puzzle.ScreenToWorldPoint(mousePos);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    //Vector3 mousePos;
+        //    //mousePos = Input.mousePosition;
+        //    //mousePos = puzzle.ScreenToWorldPoint(mousePos);
 
-            //startingPosX = mousePos.x - this.transform.position.x;
-            //startingPosY = mousePos.y - this.transform.position.y;
-            //isBeingHeld = true;
-        }
+        //    //startingPosX = mousePos.x - this.transform.position.x;
+        //    //startingPosY = mousePos.y - this.transform.position.y;
+        //    //isBeingHeld = true;
+        //}
     }
     private void OnMouseUp()
     {

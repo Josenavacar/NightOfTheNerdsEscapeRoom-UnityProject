@@ -54,4 +54,14 @@ public class randomValues : MonoBehaviour
             keepRandoming = true;
         }
     }
+    private void OnEnable()
+    {
+        keepRandoming = true;
+        waitTimeIsDone = true;
+    }
+    private void OnDisable()
+    {
+        keepRandoming = false;
+        waitTimeIsDone = false;
+    }
 }

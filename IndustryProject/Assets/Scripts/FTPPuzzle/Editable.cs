@@ -14,21 +14,11 @@ public class Editable : MonoBehaviour, IPointerClickHandler
     // Start is called before the first frame update
     void Start()
     {
-        canvasInput = FindObjectOfType<TMPro.TMP_InputField>();
+        //canvasInput = FindObjectOfType<TMPro.TMP_InputField>();
+        //Debug.Log($"{transform.parent.parent.GetComponentInChildren<TMPro.TMP_InputField>().name}");
+        canvasInput = transform.parent.parent.GetComponentInChildren<TMPro.TMP_InputField>();
         shownText = GetComponent<TMPro.TextMeshProUGUI>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void OnMouseDown()
-    {
-        
-    }
-
     public void OnPointerClick(PointerEventData eventData)
     {
         inputPlayer = canvasInput.text;

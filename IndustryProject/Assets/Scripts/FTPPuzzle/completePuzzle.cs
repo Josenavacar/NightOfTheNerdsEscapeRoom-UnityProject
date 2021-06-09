@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class completePuzzle : MonoBehaviour
 {
     [SerializeField] List<outputFunction> allFunctions;
-    [SerializeField] Image image;
-
     //public StartFTPPuzzle puzzleController;
-    public bool puzzlecCompleted;
+    public bool puzzleComplete;
     void Start()
     {
-        allFunctions.AddRange(FindObjectsOfType<outputFunction>());
-        image = GetComponent<Image>();
+        //allFunctions.AddRange(FindObjectsOfType<outputFunction>());
+        //Debug.Log($"{GetComponentInChildren<outputFunction>().name}");
+        allFunctions.AddRange(GetComponentsInChildren<outputFunction>());
         //puzzleController = FindObjectOfType<StartFTPPuzzle>();
     }
     private void Update()
@@ -31,10 +30,8 @@ public class completePuzzle : MonoBehaviour
                 if (counter == allFunctions.Count)
                 {
                     Debug.Log("fnished puzzle");
-                    puzzlecCompleted = true;
-                    //image.color = Color.green;
+                    puzzleComplete = true;
                     //puzzleController.StopPuzzle();
-
                 }
             }
             
