@@ -14,6 +14,7 @@ public class CheckResult : MonoBehaviour
     private SymbolManager symbolScript;
     private float timer;
     public int timerStart = 60;
+    public GameObject finilazingDoor;
 
     // Start is called before the first frame update
     void Start()
@@ -117,5 +118,7 @@ public class CheckResult : MonoBehaviour
             item.gameObject.GetComponent<TMP_InputField>().textComponent.alpha = 1f;
             i++;
         }
+
+        finilazingDoor.GetComponent<DoorTrigger>().OpenDoor();
     }
 }
