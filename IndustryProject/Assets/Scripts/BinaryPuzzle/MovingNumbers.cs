@@ -49,7 +49,6 @@ public class MovingNumbers : MonoBehaviour
             if(beingHandled)
             {
                 beingHandled = false;
-                StartCoroutine(UpdateNumbers());
 
                 foreach(GameObject item in items)
                 {
@@ -68,15 +67,18 @@ public class MovingNumbers : MonoBehaviour
 
     IEnumerator UpdateNumbers()
     {
-        foreach(GameObject item in items)
+        while(true)
         {
-            item.GetComponent<TMP_InputField>().text = numbers[items.IndexOf(item)];
+            foreach(GameObject item in items)
+            {
+                item.GetComponent<TMP_InputField>().text = numbers[items.IndexOf(item)];
+            }
+
+            moveList(numbers);
+
+            yield return new WaitForSeconds(speed);
+            beingHandled = true;
         }
-
-        moveList(numbers);
-
-        yield return new WaitForSeconds(speed);
-        beingHandled = true;
     }
 
     void moveList(List<string> listOfItems)
