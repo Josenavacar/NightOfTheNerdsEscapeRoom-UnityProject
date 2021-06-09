@@ -17,14 +17,10 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
 
     //FTP PUZZLE NEEDED OBJECTS
     #region FTP puzzle stuff
-    //private GameObject FtpTrigger;
-    //private GameObject FTPPuzzle;
-    //private StartFTPPuzzle startFTP;
     public FTPController ftpcontroller;
     #endregion
     void Start()
     {
-        currentScene = SceneManager.GetActiveScene();
         //BINARY PUZZLE START NEDED OBJECTS / COMPONENTS
         #region Binary Puzzle
         //BinaryPuzzleStart
@@ -34,17 +30,16 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
             binaryPuzzle.SetActive(false);
         }
         triggerbox = GameObject.FindGameObjectWithTag("BinaryPuzzleTrigger");
+
+
         #endregion
         //FTP PUZZLE START NEEDED OBJECTS / COMPONENTS
         #region ftp puzzle
-        if (currentScene.name == "FTPPuzzle")
+        ftpcontroller = FindObjectOfType<FTPController>();
+
+        if(ftpcontroller != null)
         {
-            //FtpTrigger = GameObject.Find("FTPtrigger");
-            //FTPPuzzle = GameObject.FindGameObjectWithTag("FTPPuzzle");
-            //startFTP = FindObjectOfType<StartFTPPuzzle>();
-            ftpcontroller = FindObjectOfType<FTPController>();
             ftpcontroller.disableAllFTPOnStart();
-            //FTPPuzzle.SetActive(false);
         }
         #endregion
     }
@@ -52,8 +47,6 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     {
         //BINARY CHECKS FOR BINARY pUZZLE REMOVE SCENE CHECK UPON MERGING OF ALL SCENES
         #region Binary Puzzle interact
-        //if(currentScene.name == "BinaryPuzzle")
-        //{
         if (Input.GetKeyDown(KeyCode.F))
             {
                 //CHECKING IF TRIGGERBOX IS NOT NULL SO IT DOESN'T BREAK IN DIFFERENT SCENES *FOR TESTING PURPOSES*
@@ -75,14 +68,14 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                     playerCam.GetComponent<LookMouse>().enabled = true;
                 }
             }
-        //}
         #endregion
 
         // FTP CHECKS FOR FTP PUZZLE REMOVE SCENE CHECK UPON MERGING OF ALL SCENES
         #region ftp puzzle interact
-        if (currentScene.name == "FTPPuzzle")
+        
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if(ftpcontroller.FtpTrigger1 != null)
             {
                 if (Vector3.Distance(ftpcontroller.FtpTrigger1.transform.position, this.gameObject.transform.position) < 5)
                 {
@@ -90,7 +83,6 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                     {
                         DisableMovement();
                     }
-                    //FTPPuzzle.SetActive(true);
                 }
                 if (Vector3.Distance(ftpcontroller.FtpTrigger2.transform.position, this.gameObject.transform.position) < 5)
                 {
@@ -98,15 +90,10 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                     {
                         DisableMovement();
                     }
-                    //FTPPuzzle.SetActive(true);
                 }
             }
-            //if (!FTPPuzzle.activeSelf)
-            //{
-            //    gameObject.GetComponent<MovementPlayer>().enabled = true;
-            //    playerCam.GetComponent<LookMouse>().enabled = true;
-            //}
         }
+        
         
     }
     private void DisableMovement()
