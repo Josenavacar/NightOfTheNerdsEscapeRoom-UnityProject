@@ -6,10 +6,12 @@ public class ButtonActive : MonoBehaviour
 {
     public bool activated = false;
     private float timer = 10;
+    public GameObject sphereColour;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        sphereColour.GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
     // Update is called once per frame
@@ -18,10 +20,13 @@ public class ButtonActive : MonoBehaviour
         if(activated)
         {
             timer -= Time.deltaTime;
-            if(timer <= 0)
+            sphereColour.GetComponent<MeshRenderer>().material.color = Color.green;
+            if (timer <= 0)
             {
                 activated = false;
+                sphereColour.GetComponent<MeshRenderer>().material.color = Color.red;
                 timer = 10;
+
             }
         }
     }
