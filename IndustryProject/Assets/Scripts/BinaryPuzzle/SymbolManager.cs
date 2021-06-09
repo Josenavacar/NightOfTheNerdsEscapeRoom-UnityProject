@@ -23,12 +23,6 @@ public class SymbolManager : MonoBehaviour
         ResetSymbols();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ResetSymbols()
     {
         //Assures symbols will be different.
@@ -38,8 +32,6 @@ public class SymbolManager : MonoBehaviour
             symbolsChosen[1] = Random.Range(0, symbols.Count);
             symbolsChosen[2] = Random.Range(0, symbols.Count);
         }
-
-        Debug.Log(symbolsChosen[0] + ", " + symbolsChosen[1] + ", " + symbolsChosen[2]);
 
         symbol1.sprite = symbols[symbolsChosen[0]].symbol;
         symbol2.sprite = symbols[symbolsChosen[1]].symbol;

@@ -9,22 +9,24 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     private GameObject binaryPuzzle;
     private Scene currentScene;
     public GameObject playerCam;
+    GameObject FtpTrigger;
+    GameObject FTPPuzzle;
 
-    #region FTP puzzle stuff
-    [SerializeField] GameObject FtpTrigger;
-    [SerializeField] GameObject FTPPuzzle;
-    #endregion
     // Start is called before the first frame update
     void Start()
     {
         currentScene = SceneManager.GetActiveScene();
 
-        if(currentScene.name == "BinaryPuzzle")
+        //BinaryPuzzleStart
+        binaryPuzzle = GameObject.FindGameObjectWithTag("BinaryPuzzle");
+        if(binaryPuzzle != null)
         {
-            binaryPuzzle = GameObject.FindGameObjectWithTag("BinaryPuzzle");
             binaryPuzzle.SetActive(false);
-            triggerbox = GameObject.Find("BinaryPuzzleTrigger");
         }
+        triggerbox = GameObject.FindGameObjectWithTag("BinaryPuzzleTrigger");
+        
+
+
         if (currentScene.name == "FTPPuzzle")
         {
             FtpTrigger = GameObject.Find("FTPtrigger");
@@ -37,8 +39,8 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentScene.name == "BinaryPuzzle")
-        {
+        //if(currentScene.name == "BinaryPuzzle")
+        //{
             if(Input.GetKeyDown(KeyCode.F))
             {
                 if(Vector3.Distance(triggerbox.transform.position, this.gameObject.transform.position) < 5)
@@ -49,12 +51,16 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                 }
             }
             
-            if(!binaryPuzzle.activeSelf)
+            if(binaryPuzzle != null)
             {
-                gameObject.GetComponent<MovementPlayer>().enabled = true;
-                playerCam.GetComponent<LookMouse>().enabled = true;
+                if(!binaryPuzzle.activeSelf)
+                {
+                    gameObject.GetComponent<MovementPlayer>().enabled = true;
+                    playerCam.GetComponent<LookMouse>().enabled = true;
+                }
             }
-        }
+            
+        //}
         #region ftp puzzle interact
         if (currentScene.name == "FTPPuzzle")
         {

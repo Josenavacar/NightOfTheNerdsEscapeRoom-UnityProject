@@ -9,6 +9,8 @@ TagManager:
   - Codelock
   - BinaryPuzzle
   - FTPPuzzle
+  - LEDButton
+  - BinaryPuzzleTrigger
   layers:
   - Default
   - TransparentFX

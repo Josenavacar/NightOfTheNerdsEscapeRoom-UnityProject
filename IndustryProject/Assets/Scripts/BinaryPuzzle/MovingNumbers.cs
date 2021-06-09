@@ -17,10 +17,12 @@ public class MovingNumbers : MonoBehaviour
 
     private bool beingHandled = true;
     private bool win = false;
-
     void OnEnable()
     {
-        StartCoroutine(UpdateNumbers());
+        if(lineEnabled)
+        {
+            StartCoroutine(UpdateNumbers());
+        }
     }
     
     void OnDisable()

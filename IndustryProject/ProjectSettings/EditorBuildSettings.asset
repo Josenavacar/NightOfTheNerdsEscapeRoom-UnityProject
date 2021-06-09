@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalGameScenes/BinaryPuzzle.unity
     guid: dff774436f70e9e45bb5466b97b7d6cf
+  - enabled: 1
+    path: Assets/Scenes/FinalGameScenes/GroupOneLevel.unity
+    guid: 264568c59f319924591f74464ecc8901
   m_configObjects: {}
