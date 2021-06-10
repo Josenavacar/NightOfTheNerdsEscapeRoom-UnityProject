@@ -7,10 +7,11 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
 {
     //BINARY PUZZLE NEEDED OBJECTS
     #region Binary Puzzle Needed objects
-    GameObject triggerbox;
+    List<GameObject> triggerbox;
     private GameObject binaryPuzzle;
     private Scene currentScene;
     public GameObject playerCam;
+    bool FTPPuzzleOn = false;
     GameObject FtpTrigger;
     GameObject FTPPuzzle;
     #endregion
@@ -29,7 +30,9 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
         {
             binaryPuzzle.SetActive(false);
         }
-        triggerbox = GameObject.FindGameObjectWithTag("BinaryPuzzleTrigger");
+
+        triggerbox = new List<GameObject>(GameObject.FindGameObjectsWithTag("BinaryPuzzleTrigger"));
+
 
 
         #endregion
@@ -52,15 +55,18 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                 //CHECKING IF TRIGGERBOX IS NOT NULL SO IT DOESN'T BREAK IN DIFFERENT SCENES *FOR TESTING PURPOSES*
                 if (triggerbox != null)
                 {
-                    if (Vector3.Distance(triggerbox.transform.position, this.gameObject.transform.position) < 5)
+                    foreach(GameObject pc in triggerbox)
                     {
-                        binaryPuzzle.SetActive(true);
-                        gameObject.GetComponent<MovementPlayer>().enabled = false;
-                        playerCam.GetComponent<LookMouse>().enabled = false;
+                        if(Vector3.Distance(pc.transform.position, this.gameObject.transform.position) < 3)
+                        {
+                            binaryPuzzle.SetActive(true);
+                            gameObject.GetComponent<MovementPlayer>().enabled = false;
+                            playerCam.GetComponent<LookMouse>().enabled = false; 
+                        }
                     }
                 }
             }
-            if(binaryPuzzle != null)
+            if(binaryPuzzle != null && !FTPPuzzleOn)
             {
                 if(!binaryPuzzle.activeSelf)
                 {
@@ -77,7 +83,7 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
         {
             if(ftpcontroller.FtpTrigger1 != null)
             {
-                if (Vector3.Distance(ftpcontroller.FtpTrigger1.transform.position, this.gameObject.transform.position) < 5)
+                if (Vector3.Distance(ftpcontroller.FtpTrigger1.transform.position, this.gameObject.transform.position) < 3)
                 {
                     if (!ftpcontroller.CheckNearPuzzle1())
                     {
@@ -86,7 +92,7 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                     }
                     Debug.Log("movement not disabled");
                 }
-                if (Vector3.Distance(ftpcontroller.FtpTrigger2.transform.position, this.gameObject.transform.position) < 5)
+                if (Vector3.Distance(ftpcontroller.FtpTrigger2.transform.position, this.gameObject.transform.position) < 3)
                 {
                     if (!ftpcontroller.CheckNearPuzzle2())
                     {
@@ -102,11 +108,13 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     {
         gameObject.GetComponent<MovementPlayer>().enabled = false;
         playerCam.GetComponent<LookMouse>().enabled = false;
+        FTPPuzzleOn = true;
     }
     public void RestartAfterPuzzle()
     {
         gameObject.GetComponent<MovementPlayer>().enabled = true;
         playerCam.GetComponent<LookMouse>().enabled = true;
+        FTPPuzzleOn = false;
     }
     #endregion
 }

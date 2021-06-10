@@ -5266,7 +5266,6 @@ MonoBehaviour:
   FtpTrigger2: {fileID: 0}
   start1: {fileID: 5321942432812417062}
   start2: {fileID: 339621184}
-  timer: 0
   timerForTerminalsSync: 60
   door: {fileID: 1327683169}
 --- !u!1 &1401949952
