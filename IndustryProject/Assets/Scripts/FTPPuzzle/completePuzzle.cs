@@ -7,17 +7,19 @@ public class completePuzzle : MonoBehaviour
 {
     [SerializeField] List<outputFunction> allFunctions;
     //public StartFTPPuzzle puzzleController;
-    public bool puzzleComplete;
+    public bool puzzleComplete = false;
     void Start()
     {
         //allFunctions.AddRange(FindObjectsOfType<outputFunction>());
+        //puzzleController = FindObjectOfType<StartFTPPuzzle>();
         //Debug.Log($"{GetComponentInChildren<outputFunction>().name}");
         allFunctions.AddRange(GetComponentsInChildren<outputFunction>());
-        //puzzleController = FindObjectOfType<StartFTPPuzzle>();
+        
     }
     private void Update()
     {
         winPuzzle();
+        
     }
     public void winPuzzle()
     {
@@ -34,7 +36,18 @@ public class completePuzzle : MonoBehaviour
                     //puzzleController.StopPuzzle();
                 }
             }
-            
+        }
+    }
+    public void resetPuzzle()
+    {
+        if (puzzleComplete)
+        {
+            foreach (var item in allFunctions)
+            {
+                item.ResetPuzzle();
+                puzzleComplete = false;
+                Debug.Log("Complete puzzle script set outputfunction.puzzlecompleted to false");
+            }
         }
     }
     

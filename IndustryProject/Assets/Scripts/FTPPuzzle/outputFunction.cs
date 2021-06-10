@@ -58,5 +58,13 @@ public class outputFunction : MonoBehaviour
             output.color = Color.green;
         }
     }
+    public void ResetPuzzle()
+    {
+        randomNumberScript.keepRandoming = true;
+        puzzleCompleted = false;
+        playerInput.text = 0.ToString();
+        output.color = Color.white;
+        Debug.Log("outputFunction keep randoming set to true");
+    }
     
 }
