@@ -6,7 +6,7 @@ public class ButtonActive : MonoBehaviour
 {
     public bool activated = false;
     public bool finished = false;
-    private float timer = 10;
+    public float timer = 50;
     public GameObject sphereColour;
 
     // Start is called before the first frame update

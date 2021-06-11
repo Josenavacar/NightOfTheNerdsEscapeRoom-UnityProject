@@ -110,6 +110,7 @@ public class CheckResult : MonoBehaviour
         foreach(GameObject line in lines)
         {
             line.GetComponent<MovingNumbers>().finish();
+            line.GetComponent<MovingNumbers>().enabled = false;
         }
 
         foreach(GameObject item in items)

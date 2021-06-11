@@ -6541,6 +6541,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8327439715024738052, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
   m_PrefabInstance: {fileID: 476212526}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &476212528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8327439715024738054, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
+  m_PrefabInstance: {fileID: 476212526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &489624558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7688,7 +7693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37962
+  m_Name: pb_Mesh84174
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -22136,6 +22141,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -13.9813
       objectReference: {fileID: 0}
+    - target: {fileID: 2034593084230994417, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: LEDBinary
+      value: 
+      objectReference: {fileID: 2080823398}
     - target: {fileID: 2034593084331575084, guid: e8490d65b3683ea4a98227f126923311, type: 3}
       propertyPath: m_Name
       value: FinalLEDStrip
@@ -22148,11 +22157,56 @@ PrefabInstance:
       propertyPath: m_Name
       value: StripsBtn
       objectReference: {fileID: 0}
+    - target: {fileID: 5518893835601467621, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836055490346, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836069106210, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836234513256, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836430753134, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836637724747, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893836946463567, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: finilazingDoor
+      value: 
+      objectReference: {fileID: 476212528}
+    - target: {fileID: 5518893837059701675, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893837642752197, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518893837687157782, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: lineEnabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8490d65b3683ea4a98227f126923311, type: 3}
 --- !u!4 &2080823397 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2034593083834170606, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+  m_PrefabInstance: {fileID: 2080823396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2080823398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034593084331575084, guid: e8490d65b3683ea4a98227f126923311, type: 3}
   m_PrefabInstance: {fileID: 2080823396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2090066518

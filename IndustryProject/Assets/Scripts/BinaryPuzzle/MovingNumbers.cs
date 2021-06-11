@@ -127,6 +127,7 @@ public class MovingNumbers : MonoBehaviour
 
     public void finish()
     {
+        StopCoroutine(UpdateNumbers());
         win = true;
     }
 }
