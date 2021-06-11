@@ -432,7 +432,7 @@ Transform:
   - {fileID: 979963095}
   - {fileID: 1618224536}
   m_Father: {fileID: 2070232094}
-  m_RootOrder: 82
+  m_RootOrder: 81
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &49823822
 PrefabInstance:
@@ -5828,7 +5828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360699117}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.06, y: 7.43, z: 18.26}
+  m_LocalPosition: {x: 26.6, y: 7.43, z: 37.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7688,7 +7688,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh66858
+  m_Name: pb_Mesh37962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12362,7 +12362,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919602132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.59, y: 7.43, z: 26.34}
+  m_LocalPosition: {x: 7.59, y: 7.43, z: 36.73}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13318,7 +13318,7 @@ Transform:
   m_LocalScale: {x: 1.1338598, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2070232094}
-  m_RootOrder: 80
+  m_RootOrder: 73
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1008155710
 PrefabInstance:
@@ -22042,6 +22042,7 @@ Transform:
   - {fileID: 819888388}
   - {fileID: 1891273554}
   - {fileID: 1368818506}
+  - {fileID: 989020347}
   - {fileID: 325005158}
   - {fileID: 691569825}
   - {fileID: 1118097806}
@@ -22049,9 +22050,8 @@ Transform:
   - {fileID: 1220036760}
   - {fileID: 723600676}
   - {fileID: 1775774331}
-  - {fileID: 989020347}
-  - {fileID: 146399664}
   - {fileID: 35538391}
+  - {fileID: 146399664}
   - {fileID: 543010178}
   - {fileID: 1921882526}
   - {fileID: 230678272}
@@ -22120,9 +22120,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: StripsBtn1
       objectReference: {fileID: 0}
+    - target: {fileID: 2034593083994379143, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.080332324
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034593083994379143, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8190753
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034593083994379143, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.7955
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034593083994379143, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -13.9813
+      objectReference: {fileID: 0}
     - target: {fileID: 2034593084331575084, guid: e8490d65b3683ea4a98227f126923311, type: 3}
       propertyPath: m_Name
       value: FinalLEDStrip
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034593084331575087, guid: e8490d65b3683ea4a98227f126923311, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12.611
       objectReference: {fileID: 0}
     - target: {fileID: 2034593084377666046, guid: e8490d65b3683ea4a98227f126923311, type: 3}
       propertyPath: m_Name
