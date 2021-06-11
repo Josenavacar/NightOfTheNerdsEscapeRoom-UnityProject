@@ -8,6 +8,7 @@ public class LEDFinishCheck : MonoBehaviour
 {
     public List<GameObject> buttons;
     public List<GameObject> lines;
+    public GameObject LEDBinary;
 
     private bool linesEnabled = false;
 
@@ -40,5 +41,12 @@ public class LEDFinishCheck : MonoBehaviour
         {
             line.GetComponent<MovingNumbers>().lineEnabled = true;
         }
+
+        foreach(GameObject button in buttons)
+        {
+            button.GetComponent<ButtonActive>().finished = true;
+        }
+
+        LEDBinary.GetComponent<FinalLEDStrip>().greenTime = true;
     }
 }

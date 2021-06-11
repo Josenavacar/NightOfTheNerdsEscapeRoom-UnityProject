@@ -119,6 +119,6 @@ public class CheckResult : MonoBehaviour
             i++;
         }
 
-        finilazingDoor.GetComponent<DoorTrigger>().OpenDoor();
+        finilazingDoor.GetComponent<DoorTrigger>().enabled = true;
     }
 }
