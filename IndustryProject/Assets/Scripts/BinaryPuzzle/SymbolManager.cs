@@ -14,17 +14,18 @@ public class SymbolManager : MonoBehaviour
 {
     public Image symbol1, symbol2, symbol3;
     public List<SymbolNumber> symbols;
-    private int[] symbolsChosen = new int[3];
 
     public string result;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         ResetSymbols();
     }
 
     public void ResetSymbols()
     {
+        int[] symbolsChosen = new int[3];
+
         //Assures symbols will be different.
         while((symbolsChosen[0] == symbolsChosen[1]) || (symbolsChosen[0] == symbolsChosen[2]) || (symbolsChosen[1] == symbolsChosen[2]))
         {
