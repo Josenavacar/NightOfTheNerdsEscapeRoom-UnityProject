@@ -20,7 +20,7 @@ public class StartFTPPuzzle : MonoBehaviour
     void OnDisable()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        
+        PIWP.RestartAfterPuzzle();
     }
     void Update()
     {
@@ -44,7 +44,6 @@ public class StartFTPPuzzle : MonoBehaviour
         if (puzzleCompleteCheck.puzzleComplete)
         {
             this.gameObject.SetActive(false);
-            PIWP.RestartAfterPuzzle();
         }
     }
 

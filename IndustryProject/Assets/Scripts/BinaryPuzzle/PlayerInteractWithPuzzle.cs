@@ -87,19 +87,15 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
                 {
                     if (!ftpcontroller.CheckNearPuzzle1())
                     {
-                        Debug.Log("mnovement disabled");
                         DisableMovement();
                     }
-                    Debug.Log("movement not disabled");
                 }
                 if (Vector3.Distance(ftpcontroller.FtpTrigger2.transform.position, this.gameObject.transform.position) < 3)
                 {
                     if (!ftpcontroller.CheckNearPuzzle2())
                     {
-                        Debug.Log("movement disabled");
                         DisableMovement();
                     }
-                    Debug.Log("movement not disabled");
                 }
             }
         }

@@ -27,6 +27,9 @@ public class FTPController : MonoBehaviour
     }
     public void disableAllFTPOnStart()
     {
+        PlayerInteractWithPuzzle placeholder = FindObjectOfType<PlayerInteractWithPuzzle>();
+        start1.PIWP = placeholder;
+        start2.PIWP = placeholder;
         foreach (var item in allFTPPuzzles)
         {
             item.SetActive(false);
