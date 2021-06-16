@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Photon.Pun;
 
 public class PlayerInteractWithPuzzle : MonoBehaviour
 {
@@ -11,14 +12,16 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     private GameObject binaryPuzzle;
     private Scene currentScene;
     public GameObject playerCam;
-    bool FTPPuzzleOn = false;
-    GameObject FtpTrigger;
-    GameObject FTPPuzzle;
+
     #endregion
 
     //FTP PUZZLE NEEDED OBJECTS
     #region FTP puzzle stuff
-    public FTPController ftpcontroller;
+    bool FTPPuzzleOn = false;
+    List<GameObject> FtpTriggers;
+    List<GameObject> FTPPuzzles;
+    private GameObject thisOneActve = null;
+    private PhotonView photon;
     #endregion
     void Start()
     {
@@ -38,12 +41,13 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
         #endregion
         //FTP PUZZLE START NEEDED OBJECTS / COMPONENTS
         #region ftp puzzle
-        ftpcontroller = FindObjectOfType<FTPController>();
-
-        if(ftpcontroller != null)
+        FtpTriggers = new List<GameObject>(GameObject.FindGameObjectsWithTag("FTPPuzzleTrigger"));
+        FTPPuzzles = new List<GameObject>(GameObject.FindGameObjectsWithTag("FTPPuzzle"));
+        foreach (GameObject ftp in FTPPuzzles)
         {
-            ftpcontroller.disableAllFTPOnStart();
+            ftp.SetActive(false);
         }
+        photon = transform.GetComponentInParent<PhotonView>();
         #endregion
     }
     void Update()
@@ -78,39 +82,42 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
 
         // FTP CHECKS FOR FTP PUZZLE REMOVE SCENE CHECK UPON MERGING OF ALL SCENES
         #region ftp puzzle interact
-        
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if(ftpcontroller.FtpTrigger1 != null)
+            if (FtpTriggers!=null)
             {
-                if (Vector3.Distance(ftpcontroller.FtpTrigger1.transform.position, this.gameObject.transform.position) < 3)
+                foreach (GameObject item in FtpTriggers)
                 {
-                    if (!ftpcontroller.CheckNearPuzzle1())
+                    if ((Vector3.Distance(item.transform.position, this.gameObject.transform.position) < 3) && photon.IsMine)
                     {
-                        DisableMovement();
-                    }
-                }
-                if (Vector3.Distance(ftpcontroller.FtpTrigger2.transform.position, this.gameObject.transform.position) < 3)
-                {
-                    if (!ftpcontroller.CheckNearPuzzle2())
-                    {
-                        DisableMovement();
+                        thisOneActve = item.GetComponent<FTPTrigger>().FTPPuzzle;
+                        item.GetComponent<FTPTrigger>().FTPPuzzle.SetActive(true);
+                        //Debug.Log($"{item.transform.position} opening ftp puzzle");
+                        gameObject.GetComponent<MovementPlayer>().enabled = false;
+                        playerCam.GetComponent<LookMouse>().enabled = false;
+                        FTPPuzzleOn = true;
                     }
                 }
             }
         }
-    }
-    private void DisableMovement()
-    {
-        gameObject.GetComponent<MovementPlayer>().enabled = false;
-        playerCam.GetComponent<LookMouse>().enabled = false;
-        FTPPuzzleOn = true;
-    }
-    public void RestartAfterPuzzle()
-    {
-        gameObject.GetComponent<MovementPlayer>().enabled = true;
-        playerCam.GetComponent<LookMouse>().enabled = true;
-        FTPPuzzleOn = false;
+        if (FTPPuzzles != null)
+        {
+            foreach (GameObject item in FTPPuzzles)
+            {
+                if (item == thisOneActve && thisOneActve != null)
+                {
+                    //Debug.Log("item == this one active");
+                    if (!item.activeSelf)
+                    {
+                        //Debug.Log("passed the activeself check");
+                        gameObject.GetComponent<MovementPlayer>().enabled = true;
+                        playerCam.GetComponent<LookMouse>().enabled = true;
+                        FTPPuzzleOn = false;
+                        thisOneActve = null;
+                    }
+                }
+            }
+        }
     }
     #endregion
 }

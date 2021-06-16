@@ -4,47 +4,15 @@ using UnityEngine;
 
 public class FTPController : MonoBehaviour
 {
-    GameObject[] allFTPPuzzles;
-    public GameObject FtpTrigger1;
-    public GameObject FtpTrigger2;
-
-    public StartFTPPuzzle start1;
-    public StartFTPPuzzle start2;
-
     private float timer = 0;
     [SerializeField] float timerForTerminalsSync = 5f;
 
-    public DoorTrigger door;
+    public StartFTPPuzzle start1;
+    public StartFTPPuzzle start2;
+    public LockedDoorTrigger door;
 
     private bool FTPFullyComplete = false;
-    private void Start()
-    {
-        allFTPPuzzles = GameObject.FindGameObjectsWithTag("FTPPuzzle");
-        FtpTrigger1 = GameObject.Find("FTPtrigger1");
-        FtpTrigger2 = GameObject.Find("FTPtrigger2");
-        start1 = allFTPPuzzles[0].GetComponent<StartFTPPuzzle>();
-        start2 = allFTPPuzzles[1].GetComponent<StartFTPPuzzle>();
-    }
-    public void disableAllFTPOnStart()
-    {
-        PlayerInteractWithPuzzle placeholder = FindObjectOfType<PlayerInteractWithPuzzle>();
-        start1.PIWP = placeholder;
-        start2.PIWP = placeholder;
-        foreach (var item in allFTPPuzzles)
-        {
-            item.SetActive(false);
-        }
-    }
-    public bool CheckNearPuzzle1()
-    {
-        start1.checkIfStartFTP();
-        return start1.puzzleCompleteCheck.puzzleComplete;
-    }
-    public bool CheckNearPuzzle2()
-    {
-        start2.checkIfStartFTP();
-        return start2.puzzleCompleteCheck.puzzleComplete;
-    }
+
     private void Update()
     {
         if (!FTPFullyComplete)
@@ -58,13 +26,11 @@ public class FTPController : MonoBehaviour
                     {
                         Debug.Log("both completed");
                         FTPFullyComplete = true;
-                        door.OpenDoor();
+                        door.CodeSolved();
                     }
                 }
                 else
                 {
-                    //start1.puzzleCompleteCheck.puzzleComplete = false;
-                    //start2.puzzleCompleteCheck.puzzleComplete = false;
                     start1.puzzleCompleteCheck.resetPuzzle();
                     start2.puzzleCompleteCheck.resetPuzzle();
                 }
@@ -78,13 +44,11 @@ public class FTPController : MonoBehaviour
                     {
                         Debug.Log("both completed");
                         FTPFullyComplete = true;
-                        door.OpenDoor();
+                        door.CodeSolved();
                     }
                 }
                 else
                 {
-                    //start1.puzzleCompleteCheck.puzzleComplete = false;
-                    //start2.puzzleCompleteCheck.puzzleComplete = false;
                     start1.puzzleCompleteCheck.resetPuzzle();
                     start2.puzzleCompleteCheck.resetPuzzle();
                 }
