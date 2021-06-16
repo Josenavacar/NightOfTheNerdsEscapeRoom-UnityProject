@@ -22,6 +22,7 @@ public class SignalRange : MonoBehaviour {
             boostingSignal = false;
             currentMaterial.material = disabledMaterial;
         }
+
         if(other.gameObject.tag == "BoosterArea") {
             if(other.gameObject.GetComponent<SignalRange>().receivingSignal == true) {
                 receivingSignal = true;
@@ -30,11 +31,19 @@ public class SignalRange : MonoBehaviour {
         }
     }
 
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "JammerArea") {
+            boostingSignal = false;
+            currentMaterial.material = disabledMaterial;
+        }
+    }
+
     private void OnTriggerExit(Collider other) {
         if (other.gameObject.tag == "JammerArea") {
             boostingSignal = true;
             currentMaterial.material = enabledMaterial;
         }
+
         if (other.gameObject.tag == "BoosterArea") {
             receivingSignal = false;
             Debug.Log("Signal disconnected.");

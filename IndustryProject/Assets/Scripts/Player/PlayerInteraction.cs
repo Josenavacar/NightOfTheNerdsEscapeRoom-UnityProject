@@ -95,7 +95,7 @@ public class PlayerInteraction : MonoBehaviour {
 
             if(hit.transform.gameObject.name == "Signal Booster") {
                 GameObject childObject = Instantiate(signalArea);
-                childObject.transform.parent = transform;
+                childObject.transform.SetParent(transform, false);
             }
 
             if (interactableHit != null)
