@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SignalRange : MonoBehaviour {
     public bool boostingSignal;
@@ -24,12 +22,31 @@ public class SignalRange : MonoBehaviour {
             boostingSignal = false;
             currentMaterial.material = disabledMaterial;
         }
+
+        if(other.gameObject.tag == "BoosterArea") {
+            if(other.gameObject.GetComponent<SignalRange>().receivingSignal == true) {
+                receivingSignal = true;
+                Debug.Log("Getting signal.");
+            }
+        }
+    }
+
+    private void OnTriggerStay(Collider other) {
+        if (other.gameObject.tag == "JammerArea") {
+            boostingSignal = false;
+            currentMaterial.material = disabledMaterial;
+        }
     }
 
     private void OnTriggerExit(Collider other) {
-        if(other.gameObject.tag == "JammerArea") {
+        if (other.gameObject.tag == "JammerArea") {
             boostingSignal = true;
             currentMaterial.material = enabledMaterial;
+        }
+
+        if (other.gameObject.tag == "BoosterArea") {
+            receivingSignal = false;
+            Debug.Log("Signal disconnected.");
         }
     }
 }

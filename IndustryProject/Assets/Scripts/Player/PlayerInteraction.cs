@@ -3,8 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
-{
+public class PlayerInteraction : MonoBehaviour {
     [SerializeField] private Transform rayShootPoint;
     [SerializeField] private Camera cam;
 
@@ -14,6 +13,8 @@ public class PlayerInteraction : MonoBehaviour
 
     private GameObject selectedItem = null;
     private PhotonView PV;
+
+    public GameObject signalArea;
 
     private void Start()
     {
@@ -91,6 +92,11 @@ public class PlayerInteraction : MonoBehaviour
         if (hit.transform.CompareTag("Selectable"))
         {
             Interactable interactableHit = hit.transform.GetComponent<Interactable>();
+
+            if(hit.transform.gameObject.name == "Signal Booster") {
+                GameObject childObject = Instantiate(signalArea);
+                childObject.transform.SetParent(transform, false);
+            }
 
             if (interactableHit != null)
             {
