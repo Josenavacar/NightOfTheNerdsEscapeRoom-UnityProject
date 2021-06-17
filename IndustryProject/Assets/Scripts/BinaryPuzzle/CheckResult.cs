@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Photon.Pun;
 
 public class CheckResult : MonoBehaviour
 {
@@ -15,10 +16,13 @@ public class CheckResult : MonoBehaviour
     private float timer;
     public int timerStart = 60;
     public GameObject finilazingDoor;
+    private bool openDoor = false;
+    private PhotonView pv;
 
     // Start is called before the first frame update
     void Start()
     {
+        pv = PhotonView.Get(this);
         symbolScript = this.gameObject.GetComponent<SymbolManager>();
         resultHolder = gameObject.GetComponent<SymbolManager>();
 
@@ -57,6 +61,10 @@ public class CheckResult : MonoBehaviour
             }
 
             counter = 0;
+        }
+        else if (openDoor)
+        {
+            finilazingDoor.GetComponent<DoorTrigger>().enabled = true;
         }
         else
         {
@@ -119,7 +127,14 @@ public class CheckResult : MonoBehaviour
             item.gameObject.GetComponent<TMP_InputField>().textComponent.alpha = 1f;
             i++;
         }
+        openDoor = true;
+        pv.RPC("RPCUpdateVar", RpcTarget.All, openDoor);
 
-        finilazingDoor.GetComponent<DoorTrigger>().enabled = true;
+    }
+
+    [PunRPC]
+    void RPCUpdateVar(bool one)
+    {
+        openDoor = one;
     }
 }
