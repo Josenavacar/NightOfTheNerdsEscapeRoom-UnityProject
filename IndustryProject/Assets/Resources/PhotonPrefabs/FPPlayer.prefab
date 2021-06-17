@@ -764,7 +764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 4650442050438349972}
-  ftpcontroller: {fileID: 0}
 --- !u!114 &7900527871187326514
 MonoBehaviour:
   m_ObjectHideFlags: 0
