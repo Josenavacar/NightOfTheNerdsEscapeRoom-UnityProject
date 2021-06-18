@@ -8,10 +8,12 @@ public class randomValues : MonoBehaviour
     public int secondsBetweenChange = 1;
     public int currentNumber = 0;
     public anchorPuzzlePiece anchorParent;
+    public int output;
 
     private bool waitTimeIsDone = true;
     private IEnumerator couroutine;
     public bool keepRandoming = true;
+    public bool isCompleted = false;
     private void Start()
     {
         anchorParent = GetComponentInParent<anchorPuzzlePiece>();
@@ -19,9 +21,12 @@ public class randomValues : MonoBehaviour
     }
     private void Update()
     {
-        shownNumber.text = currentNumber.ToString();
-        RandomGenerator();
-        StopRandomGenerator();
+        if (!isCompleted)
+        {
+            shownNumber.text = currentNumber.ToString();
+            RandomGenerator();
+            CheckAnchor();
+        }
     }
     public void RandomGenerator()
     {
@@ -31,7 +36,15 @@ public class randomValues : MonoBehaviour
             {
                 //Debug.Log("number change");
                 waitTimeIsDone = false;
-                currentNumber = Random.Range(1, 100);
+                int check =  Random.Range(0,100);
+                if (check == output)
+                {
+                    currentNumber = check - 1;
+                }
+                else
+                {
+                    currentNumber = check;
+                }
                 couroutine = waitTime();
                 StartCoroutine(couroutine);
             }
@@ -42,7 +55,7 @@ public class randomValues : MonoBehaviour
         yield return new WaitForSeconds(secondsBetweenChange);
         waitTimeIsDone = true;
     }
-    public void StopRandomGenerator()
+    public void CheckAnchor()
     {
         if (anchorParent.occupyingPiece != null)
         {

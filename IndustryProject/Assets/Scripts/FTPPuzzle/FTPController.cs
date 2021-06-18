@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class FTPController : MonoBehaviour
 {
-    private float timer = 0;
+    private float timer = 0f;
     [SerializeField] float timerForTerminalsSync = 5f;
 
     public StartFTPPuzzle start1;
     public StartFTPPuzzle start2;
     public LockedDoorTrigger door;
+    public PhotonView photonview;
 
     private bool FTPFullyComplete = false;
 
@@ -26,13 +28,15 @@ public class FTPController : MonoBehaviour
                     {
                         Debug.Log("both completed");
                         FTPFullyComplete = true;
+                        photonview.RPC("SyncronizationAllComplete", RpcTarget.All, FTPFullyComplete);
                         door.CodeSolved();
                     }
                 }
                 else
                 {
-                    start1.puzzleCompleteCheck.resetPuzzle();
-                    start2.puzzleCompleteCheck.resetPuzzle();
+                    //start1.puzzleCompleteCheck.resetPuzzle();
+                    //start2.puzzleCompleteCheck.resetPuzzle();
+                    resetPuzzlesAndTimer();
                 }
             }
             if (start2.puzzleCompleteCheck.puzzleComplete)
@@ -44,16 +48,30 @@ public class FTPController : MonoBehaviour
                     {
                         Debug.Log("both completed");
                         FTPFullyComplete = true;
+                        photonview.RPC("SyncronizationAllComplete", RpcTarget.All, FTPFullyComplete);
                         door.CodeSolved();
                     }
                 }
                 else
                 {
-                    start1.puzzleCompleteCheck.resetPuzzle();
-                    start2.puzzleCompleteCheck.resetPuzzle();
+                    //start1.puzzleCompleteCheck.resetPuzzle();
+                    //start2.puzzleCompleteCheck.resetPuzzle();
+                    resetPuzzlesAndTimer();
                 }
             }
         }
+    }
+    void resetPuzzlesAndTimer()
+    {
+        start1.puzzleCompleteCheck.resetPuzzle();
+        start2.puzzleCompleteCheck.resetPuzzle();
+        timer = 0f;
+    }
+
+    [PunRPC]
+    void SyncronizationAllComplete(bool one)
+    {
+        FTPFullyComplete = one;
     }
         
 }

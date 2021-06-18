@@ -2,24 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class completePuzzle : MonoBehaviour
 {
     [SerializeField] List<outputFunction> allFunctions;
     //public StartFTPPuzzle puzzleController;
     public bool puzzleComplete = false;
+    public PhotonView photonview;
     void Start()
     {
         //allFunctions.AddRange(FindObjectsOfType<outputFunction>());
         //puzzleController = FindObjectOfType<StartFTPPuzzle>();
         //Debug.Log($"{GetComponentInChildren<outputFunction>().name}");
         allFunctions.AddRange(GetComponentsInChildren<outputFunction>());
-        
+        photonview = GetComponent<PhotonView>();
     }
     private void Update()
     {
         winPuzzle();
-        
     }
     public void winPuzzle()
     {
@@ -33,7 +34,7 @@ public class completePuzzle : MonoBehaviour
                 {
                     Debug.Log("fnished puzzle");
                     puzzleComplete = true;
-                    //puzzleController.StopPuzzle();
+                    photonview.RPC("SyncronizationSetComplete", RpcTarget.All, puzzleComplete);
                 }
             }
         }
@@ -46,9 +47,15 @@ public class completePuzzle : MonoBehaviour
             {
                 item.ResetPuzzle();
                 puzzleComplete = false;
+               photonview.RPC("SyncronizationSetComplete", RpcTarget.All, puzzleComplete);
                 Debug.Log("Complete puzzle script set outputfunction.puzzlecompleted to false");
             }
         }
+    }
+    [PunRPC]
+    void SyncronizationSetComplete(bool one)
+    {
+        puzzleComplete = one;
     }
     
 }

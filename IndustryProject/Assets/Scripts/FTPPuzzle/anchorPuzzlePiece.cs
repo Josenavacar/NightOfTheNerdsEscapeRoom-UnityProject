@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class anchorPuzzlePiece : MonoBehaviour
 {
     public movePuzzlePiece key;
     public movePuzzlePiece occupyingPiece;
     [SerializeField] RectTransform thisAnchor;
+
+    [SerializeField] Sprite lockedSprite;
+    [SerializeField] Sprite unlockedSprite;
 
     private void Start()
     {
@@ -26,10 +30,12 @@ public class anchorPuzzlePiece : MonoBehaviour
         if (key.anchor == thisAnchor)
         {
             occupyingPiece = key;
+            transform.GetComponent<Image>().sprite = unlockedSprite;
         }
         else
         {
             occupyingPiece = null;
+            transform.GetComponent<Image>().sprite = lockedSprite;
         }
     }
 

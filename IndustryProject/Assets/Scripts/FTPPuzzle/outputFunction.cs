@@ -22,6 +22,7 @@ public class outputFunction : MonoBehaviour
     void Start()
     {
         output = GetComponent<TMPro.TextMeshProUGUI>();
+        randomNumberScript.output = correctResult;
     }
 
     // Update is called once per frame
@@ -52,7 +53,7 @@ public class outputFunction : MonoBehaviour
     {
         if (result == correctResult)
         {
-            randomNumberScript.keepRandoming = false;
+            randomNumberScript.isCompleted = true;
             puzzleCompleted = true;
             //Debug.Log($"{puzzleCompleted} {this.GetInstanceID()}");
             output.color = Color.green;
@@ -60,7 +61,7 @@ public class outputFunction : MonoBehaviour
     }
     public void ResetPuzzle()
     {
-        randomNumberScript.keepRandoming = true;
+        randomNumberScript.isCompleted = false;
         puzzleCompleted = false;
         playerInput.text = 0.ToString();
         output.color = Color.white;
