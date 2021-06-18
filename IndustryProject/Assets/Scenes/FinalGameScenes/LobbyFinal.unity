@@ -58228,7 +58228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480492892063089897, guid: 7e106ae8c67d644438367a2bc3c62137, type: 3}
       propertyPath: playersNeededToStart
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8278502129430540564, guid: 7e106ae8c67d644438367a2bc3c62137, type: 3}
       propertyPath: RightNumber
