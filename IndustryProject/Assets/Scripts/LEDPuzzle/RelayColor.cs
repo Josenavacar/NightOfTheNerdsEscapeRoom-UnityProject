@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FinalLEDStrip : MonoBehaviour
+public class RelayColor : MonoBehaviour
 {
     public bool greenTime;
 

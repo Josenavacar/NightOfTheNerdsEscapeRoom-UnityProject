@@ -8,7 +8,7 @@ public class LEDFinishCheck : MonoBehaviour
 {
     public List<GameObject> buttons;
     public List<GameObject> lines;
-    public GameObject LEDBinary;
+    public GameObject Relay;
 
     private bool linesEnabled = false;
 
@@ -47,6 +47,6 @@ public class LEDFinishCheck : MonoBehaviour
             button.GetComponent<ButtonActive>().finished = true;
         }
 
-        LEDBinary.GetComponent<FinalLEDStrip>().greenTime = true;
+        Relay.GetComponent<RelayColor>().greenTime = true;
     }
 }

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class BinaryScene : MonoBehaviour
 {
+    public List<GameObject> lines;
+
+    public GameObject NoPowerPanel;
+
     // Start is called before the first frame update
     void OnEnable()
     {
@@ -18,6 +22,27 @@ public class BinaryScene : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
             this.gameObject.SetActive(false);
+        }
+    }
+
+    void CheckIfEnabled()
+    {
+        bool isPuzzleEnabled = true;
+        foreach(GameObject line in lines)
+        {
+            if(!line.GetComponent<MovingNumbers>().lineEnabled)
+            {
+                isPuzzleEnabled = false;
+            }
+        }
+
+        if(isPuzzleEnabled)
+        {
+            NoPowerPanel.SetActive(false);
+        }
+        else
+        {
+            NoPowerPanel.SetActive(true);
         }
     }
 }
