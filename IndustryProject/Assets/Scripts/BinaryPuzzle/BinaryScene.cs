@@ -23,6 +23,8 @@ public class BinaryScene : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             this.gameObject.SetActive(false);
         }
+
+        CheckIfEnabled();
     }
 
     void CheckIfEnabled()
