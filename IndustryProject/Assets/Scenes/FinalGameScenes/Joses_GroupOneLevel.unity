@@ -25704,12 +25704,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3655935661010668015, guid: bbb810bfbb5e3db448d6b5da50a74b5f, type: 3}
       propertyPath: m_text
-      value: 'new stopRandom = key;
+      value: 'new number wifiCode = 96;
 
-        new number gateCode = 46;
 
-        new
-        float finalKey = 50;'
+        new float ACKey = 46;
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3655935661010668015, guid: bbb810bfbb5e3db448d6b5da50a74b5f, type: 3}
       propertyPath: m_fontSize
