@@ -11,6 +11,8 @@ TagManager:
   - FTPPuzzle
   - LEDButton
   - BinaryPuzzleTrigger
+  - FTPPuzzleTrigger
+  - PuzzleContainer
   layers:
   - Default
   - TransparentFX

@@ -14,11 +14,17 @@ public class MovingNumbers : MonoBehaviour
     public float speed = .7f;
     public bool lineEnabled = true;
     private bool direction = true;
-
     private bool beingHandled = true;
     private bool win = false;
     void OnEnable()
     {
+        beingHandled = true;
+
+        foreach(GameObject item in items)
+        {
+            numbers.Add(item.GetComponent<TMP_InputField>().text);
+        }
+
         if(lineEnabled)
         {
             StartCoroutine(UpdateNumbers());
@@ -33,12 +39,7 @@ public class MovingNumbers : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        beingHandled = true;
-
-        foreach(GameObject item in items)
-        {
-            numbers.Add(item.GetComponent<TMP_InputField>().text);
-        }
+        
     }
 
     // Update is called once per frame

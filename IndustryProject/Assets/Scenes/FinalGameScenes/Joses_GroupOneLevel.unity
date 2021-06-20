@@ -5110,7 +5110,7 @@ Transform:
   - {fileID: 6524071025078216789}
   - {fileID: 1980866739069153893}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &290813885
 Mesh:
@@ -19932,7 +19932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8327439715024738052, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.585
+      value: 11.58
       objectReference: {fileID: 0}
     - target: {fileID: 8327439715024738052, guid: c2d02df87535c9e4b81c4f3149185db9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -42436,6 +42436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BinaryPuzzle
       objectReference: {fileID: 0}
+    - target: {fileID: 361030964046290537, guid: 9a1f85c20d6a458488bdc9b2d58a5472, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 361030964046290540, guid: 9a1f85c20d6a458488bdc9b2d58a5472, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -42565,6 +42569,11 @@ GameObject:
 --- !u!1 &2106009994 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 361030964138877312, guid: 9a1f85c20d6a458488bdc9b2d58a5472, type: 3}
+  m_PrefabInstance: {fileID: 2106009985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2106009995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361030964046290537, guid: 9a1f85c20d6a458488bdc9b2d58a5472, type: 3}
   m_PrefabInstance: {fileID: 2106009985}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2109186918
@@ -44372,7 +44381,7 @@ Transform:
   - {fileID: 2034593083376545996}
   - {fileID: 7829084614484315940}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2034593084640019085
 GameObject:
@@ -44383,13 +44392,27 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2034593084640019084}
+  - component: {fileID: 2034593084640019086}
   m_Layer: 0
   m_Name: Puzzles
-  m_TagString: Untagged
+  m_TagString: PuzzleContainer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2034593084640019086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034593084640019085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c6c1e07c7ef2c43b046793f77d105d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  binaryPuzzle: {fileID: 2106009995}
 --- !u!114 &2187309584703705759
 MonoBehaviour:
   m_ObjectHideFlags: 0

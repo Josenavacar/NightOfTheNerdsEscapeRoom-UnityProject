@@ -28,11 +28,15 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
         //BINARY PUZZLE START NEDED OBJECTS / COMPONENTS
         #region Binary Puzzle
         //BinaryPuzzleStart
-        binaryPuzzle = GameObject.FindGameObjectWithTag("BinaryPuzzle");
+        GameObject puzzleContainer = GameObject.FindGameObjectWithTag("PuzzleContainer");
+        binaryPuzzle = puzzleContainer.GetComponent<PuzzleContainer>().binaryPuzzle;
+
+        /*
         if(binaryPuzzle != null)
         {
             binaryPuzzle.SetActive(false);
         }
+        */
 
         triggerbox = new List<GameObject>(GameObject.FindGameObjectsWithTag("BinaryPuzzleTrigger"));
 
