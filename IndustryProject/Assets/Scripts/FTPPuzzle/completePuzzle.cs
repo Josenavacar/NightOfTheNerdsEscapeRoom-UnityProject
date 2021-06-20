@@ -47,7 +47,7 @@ public class completePuzzle : MonoBehaviour
             {
                 item.ResetPuzzle();
                 puzzleComplete = false;
-               photonview.RPC("SyncronizationSetComplete", RpcTarget.All, puzzleComplete);
+                photonview.RPC("SyncronizationSetComplete", RpcTarget.All, puzzleComplete);
                 Debug.Log("Complete puzzle script set outputfunction.puzzlecompleted to false");
             }
         }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class outputFunction : MonoBehaviour
 {
@@ -67,5 +68,5 @@ public class outputFunction : MonoBehaviour
         output.color = Color.white;
         Debug.Log("outputFunction keep randoming set to true");
     }
-    
+   
 }

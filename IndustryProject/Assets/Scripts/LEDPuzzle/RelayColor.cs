@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class RelayColor : MonoBehaviour
 {
@@ -18,4 +19,7 @@ public class RelayColor : MonoBehaviour
             this.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
         }
     }
+
+
+
 }

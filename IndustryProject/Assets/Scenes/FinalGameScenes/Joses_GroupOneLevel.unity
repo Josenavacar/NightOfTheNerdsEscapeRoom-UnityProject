@@ -3858,7 +3858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09624b61d79db4a81fb578253837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_sphere: {fileID: 6922610011559459019}
+  button_sphere: {fileID: 874256191}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &146622710
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4561,6 +4562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011707085884}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &186264863
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7150,7 +7152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09624b61d79db4a81fb578253837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_sphere: {fileID: 6922610011559459019}
+  button_sphere: {fileID: 874256191}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &416133323
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9274,6 +9277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 592738994}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &649587269
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13249,6 +13253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610010545887749}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &810675097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13719,6 +13724,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 285a3ff11220b6c4f93ebbed2ce3cfeb, type: 3}
+--- !u!1 &874256191 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1567821808986956299, guid: 285a3ff11220b6c4f93ebbed2ce3cfeb, type: 3}
+  m_PrefabInstance: {fileID: 874256190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &879412881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16424,6 +16434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610010545887749}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1055381607
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16533,6 +16544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610010545887749}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1058098461
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16642,6 +16654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011707085884}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1058279690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17139,6 +17152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 592738994}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1090755963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18594,7 +18608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09624b61d79db4a81fb578253837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_sphere: {fileID: 6922610011559459019}
+  button_sphere: {fileID: 0}
+  FTPCompleteCheck: {fileID: 6586136364355477041}
 --- !u!65 &1239394932
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18704,6 +18719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 592738994}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1241186009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22577,7 +22593,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09624b61d79db4a81fb578253837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_sphere: {fileID: 6922610011559459019}
+  button_sphere: {fileID: 874256191}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1654395657
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22983,6 +23000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610010545887749}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1709609197
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24512,7 +24530,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b09624b61d79db4a81fb578253837b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_sphere: {fileID: 6922610011559459019}
+  button_sphere: {fileID: 0}
+  FTPCompleteCheck: {fileID: 2187309584703705759}
 --- !u!65 &1893235669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24796,6 +24815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011559459019}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &1915888905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25754,6 +25774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011559459019}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &2001114564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26534,6 +26555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011707085884}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!65 &2077819961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43720,6 +43742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610010545887749}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!33 &2034593083048389978
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -43836,6 +43859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 592738994}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!4 &2034593083056332619
 Transform:
   m_ObjectHideFlags: 0
@@ -44142,6 +44166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011707085884}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!33 &2034593083787062738
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -44285,6 +44310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_sphere: {fileID: 6922610011559459019}
+  FTPCompleteCheck: {fileID: 0}
 --- !u!33 &2034593084081572604
 MeshFilter:
   m_ObjectHideFlags: 0
