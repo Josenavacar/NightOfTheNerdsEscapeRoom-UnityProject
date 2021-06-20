@@ -30,17 +30,7 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
         //BinaryPuzzleStart
         GameObject puzzleContainer = GameObject.FindGameObjectWithTag("PuzzleContainer");
         binaryPuzzle = puzzleContainer.GetComponent<PuzzleContainer>().binaryPuzzle;
-
-        /*
-        if(binaryPuzzle != null)
-        {
-            binaryPuzzle.SetActive(false);
-        }
-        */
-
         triggerbox = new List<GameObject>(GameObject.FindGameObjectsWithTag("BinaryPuzzleTrigger"));
-
-
 
         #endregion
         //FTP PUZZLE START NEEDED OBJECTS / COMPONENTS
