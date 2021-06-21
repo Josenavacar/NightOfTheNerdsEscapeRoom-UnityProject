@@ -1,11 +1,12 @@
 # Night of the Nerds Escape Room
 
-This project is a game for Night of the Nerds.
+This project is a game for Night of the Nerds. It is a digital escape room including multiple puzzles that will teach you about hacking and cyber crime.
+It includes 4-player multiplayer, different classes, a character that guides you, and is planned to have a test at the end to see what you learned.
 
 ## Project status
 
-The project is currently being actively worked on.
-The project is in a playable state, however there are still some bugs.
+The project is currently actively being worked on.
+The project is in a playable state, but does not 100% reflect the final release. Things are subject to change.
 
 ## Roadmap
 
@@ -32,4 +33,6 @@ Contributing to this project is closed off for non-team members.
 
 ## License
 
-TBA
+No license: No usage.
+
+©Night of the Nerds 2020-2021
