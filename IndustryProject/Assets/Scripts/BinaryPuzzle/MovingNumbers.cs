@@ -10,7 +10,6 @@ public class MovingNumbers : MonoBehaviour
     private List<string> numbers = new List<string>();
     public Button buttonUp;
     public Button buttonDown;
-
     public float speed = .7f;
     public bool lineEnabled = true;
     private bool direction = true;
@@ -77,7 +76,7 @@ public class MovingNumbers : MonoBehaviour
 
             moveList(numbers);
 
-            yield return new WaitForSeconds(speed);
+            yield return new WaitForSecondsRealtime(speed);
             beingHandled = true;
         }
     }
