@@ -68,7 +68,7 @@ public class MovingNumbers : MonoBehaviour
 
     IEnumerator UpdateNumbers()
     {
-        while(true)
+        while(!win)
         {
             foreach(GameObject item in items)
             {
