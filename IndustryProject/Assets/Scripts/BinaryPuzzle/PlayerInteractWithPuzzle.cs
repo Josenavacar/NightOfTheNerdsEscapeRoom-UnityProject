@@ -48,7 +48,7 @@ public class PlayerInteractWithPuzzle : MonoBehaviour
     {
         //BINARY CHECKS FOR BINARY pUZZLE REMOVE SCENE CHECK UPON MERGING OF ALL SCENES
         #region Binary Puzzle interact
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.E))
             {
                 //CHECKING IF TRIGGERBOX IS NOT NULL SO IT DOESN'T BREAK IN DIFFERENT SCENES *FOR TESTING PURPOSES*
                 if (triggerbox != null)
